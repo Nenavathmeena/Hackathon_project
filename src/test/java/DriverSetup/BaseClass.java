@@ -6,6 +6,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -15,73 +16,75 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BaseClass {
+
+	static WebDriver driver;		//declaring a variable of type webdriver
+	static Properties p;		//declaring a variable of type properties
+	static Logger logger;		//declaring a variable of type logger
+
 	
-	static WebDriver driver;
-    static Properties p;
-    static Logger logger;
- 	     
-public static WebDriver initilizeBrowser() throws IOException
-{
-	if(getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
-	{
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		//os
-		if (getProperties().getProperty("os").equalsIgnoreCase("windows")) {
-		    capabilities.setPlatform(Platform.WIN11);
-		} else if (getProperties().getProperty("os").equalsIgnoreCase("mac")) {
-		    capabilities.setPlatform(Platform.MAC);
-		} else {
-		    System.out.println("No matching OS..");
-		      }
-		//browser
-		switch (getProperties().getProperty("browser").toLowerCase()) {
-		    case "chrome":
-		        capabilities.setBrowserName("chrome");
-		        break;
-		    case "edge":
-		        capabilities.setBrowserName("MicrosoftEdge");
-		        break;
-		    default:
-		        System.out.println("No matching browser");
-		     }
-      
-       driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
-		
-	}
-	else if(getProperties().getProperty("execution_env").equalsIgnoreCase("local"))
-		{
-			switch(getProperties().getProperty("browser").toLowerCase()) 
-			{
+	//method for initilizing a browser
+	public static WebDriver initilizeBrowser() throws IOException {
+		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote")) {
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			// os
+			if (getProperties().getProperty("os").equalsIgnoreCase("windows")) {
+				capabilities.setPlatform(Platform.WIN11);
+			} else if (getProperties().getProperty("os").equalsIgnoreCase("mac")) {
+				capabilities.setPlatform(Platform.MAC);
+			} else {
+				System.out.println("No matching OS..");
+			}
+			// browser
+			switch (getProperties().getProperty("browser").toLowerCase()) {
 			case "chrome":
-		        driver=new ChromeDriver();
-		        break;
-		    case "edge":
-		    	driver=new EdgeDriver();
-		        break;
-		    default:
-		        System.out.println("No matching browser");
-		        driver=null;
+				capabilities.setBrowserName("chrome");
+				break;
+			case "edge":
+				capabilities.setBrowserName("MicrosoftEdge");
+				break;
+			default:
+				System.out.println("No matching browser");
+			}
+
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+
+		} else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local")) {
+			switch (getProperties().getProperty("browser").toLowerCase()) {
+			case "chrome":
+				driver = new ChromeDriver();		; // creating an instance for the chrome driver
+				break;
+			case "edge":
+				driver = new EdgeDriver();		; // creating an instance for the edge driver
+				break;
+			default:
+				System.out.println("No matching browser");		// printing if browser doesnt matches with any of the mentioned browsers in config file
+				driver = null;
 			}
 		}
-	 driver.manage().deleteAllCookies(); 
-	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	 driver.manage().window().maximize();
-	 return driver;
-	 
-}
+		driver.manage().deleteAllCookies();		// deleting all the cookies
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
+		return driver;
 
-public static WebDriver getDriver() {
+	}
+
+	
+	//method for returning the driver
+	public static WebDriver getDriver() {
 		return driver;
 	}
 
-public static Properties getProperties() throws IOException
-{		 
-   FileReader file=new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties");
-  		
-   p=new Properties();
-	p.load(file);
-	return p;
-}
+	//method for accessing properties
+	public static Properties getProperties() throws IOException {
+		FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties");
+		p = new Properties();		// creating an object for the properties
+		p.load(file);		// loading properties file
+		return p;		// returning the properties object
+	}
 
-
+	//method for loggers
+	public static Logger getLogger() {
+		logger = LogManager.getLogger();
+		return logger;
+	}
 }

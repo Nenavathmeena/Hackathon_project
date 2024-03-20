@@ -3,8 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
 	 <classes>
-	 <class  name="testrunner.testRunner" />
+	 <class  name="testrunner.TestRunner" />
 	 </classes> 
-  </test> <!-- Test -->
+  </test> <!-- Test -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 </suite> <!-- Suite -->
- 
+	  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

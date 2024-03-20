@@ -1,79 +1,287 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-26T13:06:31 IST" name="Suite" finished-at="2024-02-26T13:14:39 IST" duration-ms="488078">
+  <suite started-at="2024-03-10T00:30:08 IST" name="Default suite" finished-at="2024-03-10T00:32:52 IST" duration-ms="163853">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.testRunner@2a8448fa]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-26T13:06:31 IST" name="Test" finished-at="2024-02-26T13:14:39 IST" duration-ms="488078">
-      <class name="testrunner.testRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunner.testRunner@2a8448fa]" started-at="2024-02-26T13:06:31 IST" name="setUpClass" finished-at="2024-02-26T13:07:54 IST" duration-ms="83197" status="PASS">
+    <test started-at="2024-03-10T00:30:08 IST" name="Default test" finished-at="2024-03-10T00:32:52 IST" duration-ms="163853">
+      <class name="testrunner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:30:09 IST" name="setUpClass" finished-at="2024-03-10T00:30:26 IST" duration-ms="17572" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3831f4c2]]>
+                <![CDATA[org.testng.TestRunner@1d6014a7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.testRunner@2a8448fa]" started-at="2024-02-26T13:07:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-26T13:13:03 IST" duration-ms="309655" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:30:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:30:45 IST" duration-ms="19235" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User finds Ophthalmologists in banglore with relevant filters"]]>
+                <![CDATA["Applying patient stories filter for the doctors"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Doctor Details"]]>
+                <![CDATA["Regression suite for finding hospitals"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.testRunner@2a8448fa]" started-at="2024-02-26T13:13:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-26T13:13:18 IST" duration-ms="14571" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:30:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:30:52 IST" duration-ms="7076" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["sucessfully extracting and printing the list of surgeries"]]>
+                <![CDATA["Applying experience filter for the doctors"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Surgeries and Details"]]>
+                <![CDATA["Regression suite for finding hospitals"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.testRunner@2a8448fa]" started-at="2024-02-26T13:13:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-26T13:14:29 IST" duration-ms="71271" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:30:52 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:01 IST" duration-ms="8761" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Schedule a meeting in health and wellness plans for corporates"]]>
+                <![CDATA["Applying availability filter for the doctors"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Surgeries and Details"]]>
+                <![CDATA["Regression suite for finding hospitals"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunner.testRunner@2a8448fa]" started-at="2024-02-26T13:14:29 IST" name="tearDownClass" finished-at="2024-02-26T13:14:39 IST" duration-ms="9249" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:08 IST" duration-ms="7122" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Applying availability filter for the doctors"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:14 IST" duration-ms="5785" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Applying sort by filter for the doctors"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:17 IST" duration-ms="3025" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Succesful navigation to surgeries page in practo website"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:30 IST" duration-ms="13228" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation without providing name"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:35 IST" duration-ms="4374" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation without providing organization name"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:39 IST" duration-ms="4717" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation without providing contact number"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:45 IST" duration-ms="5370" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation with less digits in contact number"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:49 IST" duration-ms="4075" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation with invalid contact number"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:53 IST" duration-ms="4551" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation without providing email"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:31:56 IST" duration-ms="2633" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation with invalid email"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:31:56 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:32:12 IST" duration-ms="15550" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation with valid email"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:32:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:32:16 IST" duration-ms="4357" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation without selecting organization size dropdown"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:32:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-10T00:32:18 IST" duration-ms="2323" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Corporate Health and Wellness Form Validation without selecting interested dropdown"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Regression suite for finding hospitals"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunner.TestRunner@2a8448fa]" started-at="2024-03-10T00:32:18 IST" name="tearDownClass" finished-at="2024-03-10T00:32:52 IST" duration-ms="33904" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testrunner.testRunner -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- testrunner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

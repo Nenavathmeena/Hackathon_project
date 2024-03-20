@@ -3,8 +3,12 @@ C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\hospitals\fin
 C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\pageObjects\BasePage.java
 C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\pageObjects\DoctordetailsPage.java
 C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\pageObjects\ListdetailsPage.java
+C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\pageObjects\RegressionPage.java
+C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\pageObjects\SmokePage.java
 C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\stepDefinitions\doctorDetails.java
 C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\stepDefinitions\Hooks.java
+C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\stepDefinitions\Regression.java
+C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\stepDefinitions\Smoke.java
 C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\stepDefinitions\Storeprint.java
-C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\testrunner\testRunner.java
+C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\testrunner\TestRunner.java
 C:\Users\2303911\eclipse-workspace\Hackathon_project\src\test\java\Utility\Excel.java

@@ -1,11 +1,8 @@
 package pageObjects;
 
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -24,10 +21,10 @@ public class ListdetailsPage extends BasePage {
 	}
 	String File = System.getProperty("user.dir")+"/src/test/resources/surgeries.xlsx";
 	
-	@FindBy(xpath = "//div[@class='product-tab__title'][normalize-space()='Surgeries']")
+	@FindBy(xpath = "//div[@class='product-tab__title'][text()='Surgeries']")
 	WebElement surgeries;
 	
-	@FindBy(xpath = "//p[normalize-space()='Gallstone']")
+	@FindBy(xpath = "//p[normalize-space()='Piles']")
 	WebElement scroll;
 	
 	@FindBy(xpath = "//p[@class='mt-12px AilmentItem-module_itemText__XvCHL']")
@@ -38,9 +35,6 @@ public class ListdetailsPage extends BasePage {
 	
 	@FindBy(xpath= "//a[normalize-space()='Health & Wellness Plans']")
 	WebElement health;
-	
-	@FindBy(xpath ="//header[@id='header']//button[normalize-space()='Schedule a demo']" )
-	WebElement schedulescroll;
 	
 	@FindBy(id = "name")
 	WebElement name;
@@ -66,9 +60,6 @@ public class ListdetailsPage extends BasePage {
 	@FindBy(id = "officialEmailId")
 	WebElement validemail;
 	
-	@FindBy(xpath = "//header[@id='header']//button[normalize-space()='Schedule a demo']")
-	WebElement scheduledemo;
-	
 	@FindBy(xpath = "(//div[@class='text-center']/div[normalize-space()='THANK YOU'])[1]")
 	WebElement thankyou;
 	
@@ -76,83 +67,80 @@ public class ListdetailsPage extends BasePage {
 	//Action Methods
 	//user clicks on surgeries and validates the page
 	public void validatesurgeries() {
-		surgeries.click();
+		surgeries.click();		//clicks on the surgeries
+		String surgeriesPage = driver.getTitle();		//gets the title of the page
+		System.out.println("Title of the surgeries page is: " + surgeriesPage);		//prints the title of the  surgeries page
+		String title1 = "Practo Care Surgeries | End to end care from top surgeons in your city";		//stores the title of the page in the variable
+		Assert.assertEquals(surgeriesPage, title1, "User navigated to correct page");		//validates the title of the surgeries page
+		System.out.println("User navigated to correct page");		//prints the statement if title page is validated
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", scroll);
-		String surgeriesPage = driver.getTitle();
-		System.out.println("Title of the diagnostic page is: " + surgeriesPage);
-		String title1 = "Practo Care Surgeries | End to end care from top surgeons in your city";
-		Assert.assertEquals(surgeriesPage, title1, "User navigated to correct page");
-		System.out.println("User navigated to correct page");
+		js.executeScript("arguments[0].scrollIntoView();", scroll);		//scrolls the page
 	}
 	
 	//user extracts and stores the list of surgery names and prints them in a list
 	public void listOfSurgeries() throws IOException {
-		System.out.println("----------------Surgeries------------------");
-		List<String> data=new ArrayList<String> ();
-		System.out.println("Total no of elements : " + surgeriesname.size());
-		int c=1;
-		Excel.setCellData(File, "Sheet4", 0, 0, "List of Surgeries");
-		Excel.fillGreenColor(File, "Sheet4", 0, 0);
+		System.out.println("----------------Surgeries------------------");		//prints the statement on console
+		List<String> data=new ArrayList<String> ();		//list syntax
+		System.out.println("Total no of surgeries elements : " + surgeriesname.size());		//prints the size of the surgeries
+		int c=1;		//intially row value is equal to 1 
+		Excel.setCellData(File, "Sheet4", 0, 0, "List of Surgeries");		//enters List of Surgeries in the first row and first column
+		Excel.fillGreenColor(File, "Sheet4", 0, 0);		//fills the green colour for List of Surgeries
 		for(int i=0;i<surgeriesname.size();i++) {
-			String list=surgeriesname.get(i).getText();	
-			System.out.println(list);
-			data.add(list);
-			Excel.setCellData(File,"Sheet4",c,0, list);
-			c+=1;
+			String list=surgeriesname.get(i).getText();			//gets the text of the surgeries
+			System.out.println("Surgeries are : " +list);		//prints the surgeries names on console 
+			data.add(list);		//adds the surgeries elements in a list
+			Excel.setCellData(File,"Sheet4",c,0, list);		//prints the surgeries names in the excel sheet one by one
+			c+=1;		//increases the rows as per the list of surgeries
 		}
-		System.out.println("List of surgeries are : " +data);
+		System.out.println("List of surgeries are : " +data);		//prints the surgeries names in list format
 	}
 	
+	//user clicks on for corporates and clicks on health and wellness plans in practo home page
 	public void forprovidersHealth() {
-		forproviders.click();
-		health.click();
+		forproviders.click();		//clicks on for corporates in homepage
+		health.click();		//clicks on health & wellness plans 
 	}
 	
 	//user navigates to health and wellness plans page and validate the page
 	public void validateDemoPage() {
-		String title = driver.getTitle();
-		System.out.println("corporates page title is : " + title);
-		String text = "Employee Health | Corporate Health & Wellness Plans | Practo";
-		Assert.assertEquals( title,text,"Directed to correct page");
-		System.out.println("Directed to correct page");
+		String title = driver.getTitle();		//gets the title of the health page
+		System.out.println("corporates page title is : " + title);		//prints the title of the page on console
+		String text = "Employee Health | Corporate Health & Wellness Plans | Practo";		//stores the title of the page in variable
+		Assert.assertEquals( title,text,"Directed to correct page");		//validates the health page through assertions
+		System.out.println("Directed to correct page");		//prints the statement on console if title of the page is validated through assertions
 	}
 	
+
 	//user provide invalid email and validate schedule a demo button and print the invalid email in console and enter valid email
 	public void details() throws InterruptedException, IOException {
-//		JavascriptExecutor js=(JavascriptExecutor)driver;
-//		js.executeScript("arguments[0].scrollIntoView();",schedulescroll );
-		//user provide invalid email and validate schedule a demo button is enabled in the health and wellness plans page
-		name.sendKeys(BaseClass.getProperties().getProperty("name"));
-		orgname.sendKeys(BaseClass.getProperties().getProperty("organizationname"));
-		mobileno.sendKeys(BaseClass.getProperties().getProperty("mobileno"));
-		email.sendKeys(BaseClass.getProperties().getProperty("invalidemail"));
+		name.sendKeys(BaseClass.getProperties().getProperty("name"));		//enters the name in the name field of the demopage
+		orgname.sendKeys(BaseClass.getProperties().getProperty("organizationname"));				//enters the organization name in the organizationname field of the demopage 
+		mobileno.sendKeys(BaseClass.getProperties().getProperty("mobileno"));		//enters the mobile number in the mobileno field of the demopage
+		email.sendKeys(BaseClass.getProperties().getProperty("invalidemail"));		//enters the invalid email in the email field of the demopage
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();",schedulescroll );
-		Select sc = new Select(orgdropdown);
-		sc.selectByVisibleText("5001-10000");
-		Select sc1 = new Select(interestdropdown);
-		sc1.selectByVisibleText("A career opportunity");
-		//User validate the Schedule Demo is being displayed or not.
-		System.out.println(schedule);
-		Assert.assertTrue(true, "User entered valid details");
-		String value = email.getAttribute("value");
-		System.out.println(value);
-		email.clear();
-		validemail.sendKeys(BaseClass.getProperties().getProperty("validemail"));
-		scheduledemo.click();
-		Thread.sleep(9000);
+		js.executeScript("arguments[0].scrollIntoView();",name );		//scrolls the page 
+		Select sc = new Select(orgdropdown);		//selects the organisation dropdown
+		sc.selectByVisibleText("5001-10000");		//selects "5001-10000" from the dropdown
+		Select sc1 = new Select(interestdropdown);		//selects the interstedin dropdown
+		sc1.selectByVisibleText("A career opportunity");		//selects "A career opportunity" from the dropdown
+		Assert.assertTrue(true, "User entered valid details");		//validates the schedule a demo button is enabled or not 
+		String value = email.getAttribute("value");		//gets the invalid email
+		System.out.println(value);		//prints the invalid email on console 
+		email.clear();		//clears the email field 
+		validemail.sendKeys(BaseClass.getProperties().getProperty("validemail"));		//enters the valid email in the email field of the demopage
+		schedule.click();		//clicks on the schedule a demo button
+		Thread.sleep(9000);		//waits to manually select the elements in captcha
 	}
 	
-	//User validates the thankyou message
+	//user validates the thankyou message
 	public void thankyou() throws InterruptedException {
-		thankyou.isDisplayed();
-		Assert.assertTrue(true,"THANK YOU message is displayed" );
-		System.out.println("THANK YOU message is displayed" );
+		Assert.assertTrue(true,"THANK YOU message is displayed" );		//validates the thankyou message
+		System.out.println("THANK YOU message is displayed" );		//prints the statement on console if thankyou message is displayed through assertions
 	}
-
 }
 	
 	
+
+
 	
 

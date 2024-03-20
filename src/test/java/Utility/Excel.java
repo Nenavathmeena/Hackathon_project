@@ -11,13 +11,15 @@ package Utility;
 	import org.apache.poi.xssf.usermodel.XSSFSheet;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 	public class Excel {
-		public static FileInputStream fi;
-		public static FileOutputStream fo;
-		public static XSSFWorkbook wb;
-		public static XSSFSheet ws;
-		public static XSSFRow row;
-		public static XSSFCell cell;
-		public static CellStyle style;   
+		public static FileInputStream fi;		// declaring fileinput stream variable
+		public static FileOutputStream fo;		// declaring fileoutput stream variable
+		public static XSSFWorkbook wb;		// declaring workbook variable
+		public static XSSFSheet ws;		//declaring sheet variable
+		public static XSSFRow row;		//declaring row variable
+		public static XSSFCell cell;		//declaring cell variable
+		public static CellStyle style; 
+		
+		// method for getting the row count using xlfile and xlsheet
 		public static int getRowCount(String xlfile,String xlsheet) throws IOException 
 		{
 			fi=new FileInputStream(xlfile);
@@ -42,6 +44,7 @@ package Utility;
 			return cellcount;
 		}
 	 
+		// method for getting the cell count using xlfile and xlsheet
 		public static String getCellData(String xlfile,String xlsheet,int rownum,int colnum) throws IOException
 		{
 			fi=new FileInputStream(xlfile);
@@ -67,6 +70,7 @@ package Utility;
 		}
 	 
 
+		// method for getting the data using xlfile, xlsheet,rownumber,column number
 		public static void setCellData(String xlfile,String xlsheet,int rownum,int colnum, String data) throws IOException
 		{
 			fi=new FileInputStream(xlfile);
@@ -89,6 +93,8 @@ package Utility;
 			fi.close();
 			fo.close();
 		}
+		
+		// method for filling green colour to the data using xlfile, xlsheet,rownumber,column number
 		public static void fillGreenColor(String xlfile,String xlsheet,int rownum,int colnum) throws IOException
 		{
 			fi=new FileInputStream(xlfile);
@@ -107,6 +113,7 @@ package Utility;
 			fo.close();
 		}
 	 
+		// method for filling green colour to the data using xlfile, xlsheet,rownumber,column number
 		public static void fillRedColor(String xlfile,String xlsheet,int rownum,int colnum) throws IOException
 		{
 			fi=new FileInputStream(xlfile);
